@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DC.DES | Creative Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              neon: 'var(--neon-color, #FF0055)',
+              black: '#000000',
+              offblack: '#0a0a0a',
+              offwhite: '#FAF0F0',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Anton', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            backgroundImage: {
+              'stripes': 'repeating-linear-gradient(45deg, transparent, transparent 10px, #e5e5e5 10px, #e5e5e5 20px)',
+              'stripes-dark': 'repeating-linear-gradient(45deg, transparent, transparent 10px, #333333 10px, #333333 20px)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --neon-color: #FF0055;
+        --text-stroke-color: #000000;
+        --stripe-color: #e5e5e5;
+        --bg-overlay: #FAF0F0;
+      }
+      .dark {
+        --text-stroke-color: #FAF0F0;
+        --stripe-color: #333333;
+        --bg-overlay: #0a0a0a;
+      }
+
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .no-scrollbar {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+      }
+      
+      /* Lenis Recommended CSS */
+      html.lenis, html.lenis body {
+        height: auto;
+      }
+
+      .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+      }
+
+      .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+      }
+
+      .lenis.lenis-stopped {
+        overflow: hidden;
+      }
+
+      .lenis.lenis-scrolling iframe {
+        pointer-events: none;
+      }
+
+      /* Global Scroll Settings */
+      html {
+        scroll-behavior: auto; /* Managed by Lenis */
+        overflow-x: hidden;
+      }
+      
+      body {
+        transition: background-color 0.5s ease, color 0.5s ease;
+        overflow-x: hidden;
+        width: 100%;
+      }
+
+      ::view-transition-old(root),
+      ::view-transition-new(root) {
+        animation: none;
+        mix-blend-mode: normal;
+      }
+      
+      /* Ensure the new view is on top */
+      ::view-transition-new(root) {
+        z-index: 9999;
+      }
+      
+      ::view-transition-old(root) {
+        z-index: 1;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "gsap": "https://esm.sh/gsap@3.12.5",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
+    "lenis": "https://esm.sh/lenis@1.1.20",
+    "@use-gesture/react": "https://esm.sh/@use-gesture/react@10.3.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-offwhite dark:bg-offblack text-black dark:text-offwhite">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

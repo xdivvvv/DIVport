@@ -1,0 +1,15 @@
+.text-type {
+  display: block;
+  white-space: pre-wrap;
+}
+
+.text-type__cursor {
+  margin-left: 0.1em;
+  display: inline-block;
+  opacity: 1;
+  vertical-align: baseline;
+}
+
+.text-type__cursor--hidden {
+  display: none;
+}
